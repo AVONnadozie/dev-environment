@@ -3,7 +3,7 @@ FROM php:8.0
 # Install npm
 # libzip-dev: for the PHP zip extension (used by Composer)
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-    && apt update && apt install -y git ssh apache2-utils nodejs python3-pip libzip-dev zip && rm -rf /var/lib/apt/lists/*
+    && apt update && apt install -y git ssh apache2-utils nodejs python3-pip libzip-dev libpng-dev zip && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php \
@@ -16,7 +16,7 @@ RUN pip3 install --upgrade --user awscli && echo 'export PATH=/root/.local/bin:$
 # Install serverless
 RUN npm install -g serverless
 
-RUN docker-php-ext-install zip pdo_mysql
+RUN docker-php-ext-install zip pdo_mysql gd bcmath
 
 RUN mkdir -p /var/task
 
