@@ -1,8 +1,8 @@
-FROM php:8.0
+FROM php:8.1
 
 # Install npm
 # libzip-dev: for the PHP zip extension (used by Composer)
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt update && apt install -y git ssh apache2-utils nodejs python3-pip libzip-dev libpng-dev zip && rm -rf /var/lib/apt/lists/*
 
 # Install Composer

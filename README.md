@@ -7,8 +7,8 @@ Thanks to that image you can easily get started with Bref without having to inst
 Run any command in the container:
 
 ```bash
-docker run --rm -it bref/dev-env <command>
+docker run --rm -it avonnadozie/bref:8.0 <command>
 
 # For example:
-docker run --rm -it bref/dev-env php -v
+docker run --rm -it avonnadozie/bref:8.0 php -v
 ```
